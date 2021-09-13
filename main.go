@@ -34,7 +34,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Hello, ")
 		q := r.URL.Query()
 	if name := q.Get("name"); name == "" {
-		io.WriteString(w, "world!")
+		io.WriteString(w, "world!!")
 	} else {
 		io.WriteString(w, name+"!")
 	}
