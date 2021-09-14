@@ -70,9 +70,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ needs.docker-build.outputs.tags }}
-      - uses: docker://gcr.io/pipecd/pipectl:v0.13.2
+      - uses: docker://gcr.io/pipecd/pipectl:v0.16.0
         with:
           args: event register --insecure --address=${{ secrets.PIPECD_API_ADDRESS }} --api-key=${{ secrets.PIPECD_API_KEY }} --name=dev-image-update --data=${{ needs.docker-build.outputs.tags }}
-      - uses: docker://gcr.io/pipecd/pipectl:v0.13.2
+      - uses: docker://gcr.io/pipecd/pipectl:v0.16.0
         with:
           args: event register --insecure --address=${{ secrets.PIPECD_API_ADDRESS }} --api-key=${{ secrets.PIPECD_API_KEY }} --name=prod-image-update --data=${{ needs.docker-build.outputs.tags }}
