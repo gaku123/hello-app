@@ -36,7 +36,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if name := q.Get("name"); name == "" {
 		io.WriteString(w, "world!!")
 	} else {
-		io.WriteString(w, name+"!")
+		io.WriteString(w, name+"!!")
 	}
 }
 
